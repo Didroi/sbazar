@@ -7,7 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class BasePage:
-    base_url = 'https://magento.softwaretestingboard.com/'
+    base_url = 'https://www.sbazar.cz//'
     page_url = None
 
     def __init__(self, driver: WebDriver):
