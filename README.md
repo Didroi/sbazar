@@ -1,3 +1,3 @@
 # sbazar
 
-My simple try to create few test of popular czech web-market
+My attempt to create a few simple tests for a popular Czech e-commerce site.
