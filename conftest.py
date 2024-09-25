@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from test_ui_dmitrii.pages.create_new_customer_account import NewCustomerAccount
+from pages.main_page import MainPage
 
 
 
@@ -14,6 +14,6 @@ def driver():
 
 
 @pytest.fixture()
-def create_account_page(driver):
-    return NewCustomerAccount(driver)
+def open_main_page(driver):
+    return MainPage(driver)
 
