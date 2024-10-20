@@ -12,14 +12,13 @@ def driver():
     driver.implicitly_wait(15)
     driver.maximize_window()
     yield driver
-    sleep(4)
+    sleep(3)  #its just for tests if i'll forget delete it
     driver.quit()
-
 
 @pytest.fixture()
 def open_main_page(driver):
     return MainPage(driver)
 
 @pytest.fixture()
-def prague_main_page(driver):
+def prague_page(driver):
     return PrahaPage(driver)
