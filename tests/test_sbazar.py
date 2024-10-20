@@ -17,5 +17,16 @@ def test_sorting_products(open_main_page):
 
 def test_back_to_home_page_by_logo(open_main_page, prague_page):
     prague_page.open_prague_page()
+    prague_page.click_to_logo_to_switch_to_main()
+    assert open_main_page.is_title_correct()
+    assert open_main_page.is_text_present()
+
+def test_open_sport_supplies_page(sport_page):
+    sport_page.open_sport_supplies_page()
+    assert sport_page.is_title_correct()
+
+def test_open_deeper_sport_supplies_page(another_sport_supply_page):
+    another_sport_supply_page.open_another_sport_supplies_page()
+    assert another_sport_supply_page.is_title_correct()
 
 

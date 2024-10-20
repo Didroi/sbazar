@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver
 from pages.main_page import MainPage
 from pages.praha_page import PrahaPage
+from pages.sport_page import SportPage
+from pages.another_sport_supplies_page import AnotherSportSuppliesPage
 from time import sleep
 
 
@@ -22,3 +24,11 @@ def open_main_page(driver):
 @pytest.fixture()
 def prague_page(driver):
     return PrahaPage(driver)
+
+@pytest.fixture()
+def sport_page(driver):
+    return SportPage(driver)
+
+@pytest.fixture()
+def another_sport_supply_page(driver):
+    return AnotherSportSuppliesPage(driver)

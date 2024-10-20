@@ -50,13 +50,14 @@ class BasePage:
 
     @allure.step('Check Title')
     def is_text_present(self, text='Vyberte si z', class_name='p-uw-item-list__items-count'):
+        print(text)
+        print(class_name)
         return text in self.find((By.CLASS_NAME, class_name)).text
 
     def changing_page(self, locator, locator_2 = None):
-
         self.wait()
 
-        changing_page = self.find((By.CSS_SELECTOR, locator))
+        changing_page = self.find(locator)
         changing_page.click()
         if locator_2:
-            self.click((By.ID, locator_2))
+            self.click(locator_2)
