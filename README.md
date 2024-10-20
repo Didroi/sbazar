@@ -1,3 +1,4 @@
-# sbazar.selenium  (in process)
+# sbazar
 
-My attempt to create a few simple tests of a popular Czech e-commerce site.
+My attempt to create a few simple UI tests of a popular Czech e-commerce site.
+sbazar.selenium  (in process)
