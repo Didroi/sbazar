@@ -17,7 +17,10 @@ class MainPage(BasePage):
 
     @allure.step('Changing region')
     def changing_region(self):
-        self.changing_page('[aria-controls="react-autowhatever-1"]', 'react-autowhatever-1-section-1-item-0')
+        self.changing_page(
+            (By.CSS_SELECTOR, '[aria-controls="react-autowhatever-1"]'),
+            (By.ID, 'react-autowhatever-1-section-1-item-0')
+        )
 
     @allure.step('Sorting products')
     def sorting_by_(self, sort_by = 'price', sort_order = 'asc'):
