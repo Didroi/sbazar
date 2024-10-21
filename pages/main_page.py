@@ -51,3 +51,10 @@ class MainPage(BasePage):
         else:
             print("Need to define a method 'sorting_by_'")
         return self.find((By.CLASS_NAME, 'p-uw-item-list__page-title')).text == returned_text
+
+    @allure.step('Click to Login link')
+    def click_to_login_lnk(self):
+        shadow_root = self.find((By.XPATH, '//szn-login-widget[@data-dot="login-badge"]')).shadow_root
+        login_link = shadow_root.find_element(By.ID, 'login')
+        login_link.click()
+

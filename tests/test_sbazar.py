@@ -29,4 +29,7 @@ def test_open_deeper_sport_supplies_page(another_sport_supply_page):
     another_sport_supply_page.open_another_sport_supplies_page()
     assert another_sport_supply_page.is_title_correct()
 
+def test_registration(open_main_page):
+    open_main_page.open()
+    open_main_page.click_to_login_lnk()
 
