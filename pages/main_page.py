@@ -55,6 +55,17 @@ class MainPage(BasePage):
     @allure.step('Click to Login link')
     def click_to_login_lnk(self):
         shadow_root = self.find((By.XPATH, '//szn-login-widget[@data-dot="login-badge"]')).shadow_root
-        login_link = shadow_root.find_element(By.ID, 'login')
-        login_link.click()
 
+        # shadow_root = self.driver.find_element(By.XPATH, '//szn-login-widget[@data-dot="login-badge"]').shadow_root # это элемент перед shadow DOM
+        login_link = shadow_root.find_element(By.ID, 'login')
+        # print(login_link.text)
+        # login_link.click()
+
+        # shadow_host = WebDriverWait(self.driver, 10).until(
+        #     ec.presence_of_element_located((By.CSS_SELECTOR, "szn-login-widget"))
+        # )
+        # shadow_root = self.driver.execute_script('return arguments[0].shadowRoot', shadow_host)
+        # login_link = shadow_root.find_element(By.CSS_SELECTOR, "#login")
+        # self.driver.execute_script("arguments[0].scrollIntoView(true);", login_link)
+        WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable(login_link))
+        login_link.click()
