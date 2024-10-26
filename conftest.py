@@ -6,6 +6,8 @@ from pages.sport_page import SportPage
 from pages.another_sport_supplies_page import AnotherSportSuppliesPage
 from time import sleep
 
+from pages.LinkedIn import LinkedIn
+
 
 
 @pytest.fixture()
@@ -32,3 +34,7 @@ def sport_page(driver):
 @pytest.fixture()
 def another_sport_supply_page(driver):
     return AnotherSportSuppliesPage(driver)
+
+@pytest.fixture()
+def linkedin(driver):
+    return LinkedIn(driver)

@@ -33,3 +33,6 @@ def test_registration(open_main_page):
     open_main_page.open()
     open_main_page.click_to_login_lnk()
 
+
+# def test_linkedin(linkedin):
+#     linkedin.open_linkedin()

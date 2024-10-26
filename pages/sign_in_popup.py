@@ -10,4 +10,5 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 
 class SignInModalWindow(BasePage):
+    pass
 
