@@ -20,3 +20,16 @@ class SignInModalWindow(BasePage):
         self.driver.switch_to.window(actual_tabs[1])
         return self.check_url_contains('prihlaseni-seznam-ucet')
 
+    def click_to_login_input(self):
+        self.click((By.ID, 'login-username'))
+
+    def click_create_new_account(self):
+        self.switch_to_new_window()
+        self.wait()
+        self.click_to_login_input()
+        self.click((By.CSS_SELECTOR, '[data-locale="login.register.link"]'))
+
+    def choose_email_creation_link(self):
+        self.click((By.CSS_SELECTOR, '[data-locale="register.intro.own.title"]'))
+        self.wait()
+
