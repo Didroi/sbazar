@@ -35,7 +35,11 @@ def test_open_account_help_page(open_main_page, signin_modal_window):
     signin_modal_window.open_help()
     assert signin_modal_window.check_correct_page_is_open()
 
-
+def test_registration(open_main_page, signin_modal_window):
+    open_main_page.open()
+    open_main_page.click_to_login_lnk()
+    signin_modal_window.click_create_new_account()
+    # signin_modal_window.choose_email_creation_link()
 
 # def test_linkedin(linkedin):
 #     linkedin.open_linkedin()
