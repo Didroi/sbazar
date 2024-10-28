@@ -11,3 +11,4 @@ db_creds.py
 allure-results
 allure-report
 allure-rereport
+secrets.json

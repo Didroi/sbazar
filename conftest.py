@@ -3,8 +3,11 @@ from selenium import webdriver
 from pages.main_page import MainPage
 from pages.praha_page import PrahaPage
 from pages.sport_page import SportPage
+from pages.sign_in_popup import SignInModalWindow
 from pages.another_sport_supplies_page import AnotherSportSuppliesPage
 from time import sleep
+
+from pages.LinkedIn import LinkedIn
 
 
 
@@ -32,3 +35,12 @@ def sport_page(driver):
 @pytest.fixture()
 def another_sport_supply_page(driver):
     return AnotherSportSuppliesPage(driver)
+
+@pytest.fixture()
+def linkedin(driver):
+    return LinkedIn(driver)
+
+@pytest.fixture()
+def signin_modal_window(driver):
+    return SignInModalWindow(driver)
+

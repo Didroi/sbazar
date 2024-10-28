@@ -11,3 +11,12 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 class SignInModalWindow(BasePage):
 
+    def open_help(self):
+        self.switch_to_new_window()
+        self.click((By.CSS_SELECTOR, '[data-locale="footer.help"]'))
+
+    def check_correct_page_is_open(self):
+        actual_tabs = self.driver.window_handles
+        self.driver.switch_to.window(actual_tabs[1])
+        return self.check_url_contains('prihlaseni-seznam-ucet')
+
