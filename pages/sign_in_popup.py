@@ -30,6 +30,15 @@ class SignInModalWindow(BasePage):
         self.click((By.CSS_SELECTOR, '[data-locale="login.register.link"]'))
 
     def choose_email_creation_link(self):
-        self.click((By.CSS_SELECTOR, '[data-locale="register.intro.own.title"]'))
         self.wait()
+        self.click((By.CSS_SELECTOR, '[data-locale="register.intro.own.title"]'))
+
+    def enter_email(self):
+        input = self.find((By.ID, 'register-username'))
+        input.send_keys('ddd@ddd.ru')
+        self.wait()
+        self.click((By.XPATH, 'button[@type="submit"]'))
+
+    def fill_account_creating_form(self):
+        pass
 
