@@ -29,9 +29,12 @@ def test_open_deeper_sport_supplies_page(another_sport_supply_page):
     another_sport_supply_page.open_another_sport_supplies_page()
     assert another_sport_supply_page.is_title_correct()
 
-def test_registration(open_main_page):
+def test_open_account_help_page(open_main_page, signin_modal_window):
     open_main_page.open()
     open_main_page.click_to_login_lnk()
+    signin_modal_window.open_help()
+    assert signin_modal_window.check_correct_page_is_open()
+
 
 
 # def test_linkedin(linkedin):

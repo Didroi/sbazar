@@ -61,3 +61,19 @@ class BasePage:
         changing_page.click()
         if locator_2:
             self.click(locator_2)
+
+    def switch_to_new_window(self):
+        tabs = self.driver.window_handles
+        self.driver.switch_to.window(tabs[-1])
+        # print(tabs)
+
+    def switch_to_first_window(self):
+        tabs = self.driver.window_handles
+        self.driver.switch_to.window(tabs[0])
+
+    def check_url_contains(self, *keywords):
+        WebDriverWait(self.driver, 10).until(
+            lambda driver: driver.current_url != "about:blank"
+        )
+        current_url = self.driver.current_url
+        return all(keyword in current_url for keyword in keywords)
